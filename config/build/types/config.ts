@@ -4,6 +4,7 @@ export type WebpackPaths = {
     entry: string;
     output: string;
     html: string;
+    src: string;
 }
 
 export interface Options {

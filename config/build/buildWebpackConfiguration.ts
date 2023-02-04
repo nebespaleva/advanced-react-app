@@ -17,7 +17,7 @@ export function buildWebpackConfiguration(options: Options): webpack.Configurati
             clean: true,
         },
         plugins: buildPlugins(paths),
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         module: {
             rules: buildRules(options),
         },
