@@ -3,6 +3,24 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {Options} from "./types/config";
 
 export function buildRules(options: Options):webpack.RuleSetRule[] {
+    const fileRules = {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
+        };
+
+    const svgRules = {
+        test: /\.svg$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+            },
+        ],
+    }
+
     const scssRules = {
             test: /\.s[ac]ss$/i,
             use: [
@@ -29,6 +47,8 @@ export function buildRules(options: Options):webpack.RuleSetRule[] {
     }
 
     return [
+        fileRules,
+        svgRules,
         typescriptRule,
         scssRules,
     ]

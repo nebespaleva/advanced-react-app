@@ -1,0 +1,17 @@
+.appLink {
+  text-decoration: none;
+  transition: 0.3s ease-out all;
+
+  &:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 2px var(--inverted-color-primary);
+  }
+}
+
+.primary {
+  color: var(--inverted-color-primary);
+}
+
+.secondary {
+  color: var(--inverted-color-secondary);
+}
