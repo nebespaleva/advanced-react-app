@@ -16,7 +16,7 @@ export function buildWebpackConfiguration(options: Options): webpack.Configurati
             filename: '[name].[contenthash].js',
             clean: true,
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(paths, isDev),
         resolve: buildResolvers(options),
         module: {
             rules: buildRules(options),

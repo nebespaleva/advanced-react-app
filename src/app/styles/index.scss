@@ -3,13 +3,26 @@
 @import "./theme/dark";
 @import "./theme/light";
 
+* {
+  box-sizing: border-box;
+}
+
 .app {
   font: var(--font-m);
 
   background-color: var(--bg-color);
-  color: var(--color-primary);
+  color: var(--color-secondary);
 
   height: 100vh;
 
   transition: 0.3s ease-out all;
+}
+
+.page-content {
+  display: flex;
+}
+
+.page-wrapper {
+  padding: var(--l);
+  flex-grow: 1;
 }

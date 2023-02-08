@@ -4,12 +4,12 @@
   font: var(--font-l);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: var(--m);
 }
 
 .links {
   & > a:first-child {
-    margin-right: var(--m);
+    margin-right: var(--xl);
   }
 }
