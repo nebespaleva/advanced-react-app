@@ -1,15 +1,15 @@
 .navbar {
-  background-color: var(--inverted-bg-color);
-  height: var(--navbar-height);
-  font: var(--font-l);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: var(--m);
+    background-color: var(--inverted-bg-color);
+    height: var(--navbar-height);
+    font: var(--font-l);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--m);
 }
 
 .links {
-  & > a:first-child {
-    margin-right: var(--xl);
-  }
+    & > a:first-child {
+        margin-right: var(--xl);
+    }
 }

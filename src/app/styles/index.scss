@@ -4,25 +4,22 @@
 @import "./theme/light";
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .app {
-  font: var(--font-m);
-
-  background-color: var(--bg-color);
-  color: var(--color-secondary);
-
-  height: 100vh;
-
-  transition: 0.3s ease-out all;
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--color-secondary);
+    height: 100vh;
+    transition: 0.3s ease-out all;
 }
 
 .page-content {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  padding: var(--l);
-  flex-grow: 1;
+    padding: var(--l);
+    flex-grow: 1;
 }

@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/jsx-runtime',
-    'standard-with-typescript'
+    'standard-with-typescript',
+    'plugin:i18next/recommended'
   ],
   overrides: [
   ],
@@ -22,7 +23,8 @@ module.exports = {
   root: true,
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'i18next'
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
@@ -33,7 +35,8 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expression': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/dot-notation': 'off',
-    '@typescript-eslint/no-throw-literal': 'off'
+    '@typescript-eslint/no-throw-literal': 'off',
+    'i18next/no-literal-string': 2
   },
   globals: {
     __IS_DEV__: true
