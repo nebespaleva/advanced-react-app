@@ -1,12 +1,13 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/jsx-runtime',
     'standard-with-typescript',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
   ],
   overrides: [
   ],
@@ -23,8 +24,7 @@ module.exports = {
   root: true,
   plugins: [
     'react',
-    '@typescript-eslint',
-    'i18next'
+    'i18next',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
