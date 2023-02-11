@@ -1,0 +1,8 @@
+.notFoundPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: calc(100vh - var(--navbar-height) - var(--l) * 2);
+    font: var(--font-l);
+}
