@@ -4,5 +4,11 @@
   "Главная": "Main",
   "скрыть": "Hide",
   "развернуть": "Show",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "На главную": "Back to main",
+  "Произошла ошибка ": "Something went wrong ",
+  "Наименование ошибки:": "Error name:",
+  "Текст ошибки:": "Error description:",
+  "Перезагрузить": "Reload",
+  "Выбросить ошибку": "Throw error"
 }

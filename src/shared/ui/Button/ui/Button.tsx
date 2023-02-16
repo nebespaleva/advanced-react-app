@@ -5,6 +5,7 @@ import styles from './Button.module.scss'
 export enum ButtonTheme {
   PRIMARY = 'primary',
   CLEAR = 'clear',
+  ERROR = 'error',
 }
 
 type ButtonType = {

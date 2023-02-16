@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    row-gap: var(--l);
     flex-grow: 1;
     height: calc(100vh - var(--navbar-height) - var(--l) * 2);
     font: var(--font-l);

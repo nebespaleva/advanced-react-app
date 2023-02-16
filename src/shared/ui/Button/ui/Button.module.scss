@@ -9,3 +9,11 @@
     font: var(--font-m);
     color: var(--inverted-color-secondary);
 }
+
+.error {
+    width: 150px;
+    height: var(--xl);
+    background-color: var(--inverted-color-secondary);
+    color: var(--inverted-bg-color);
+    box-shadow: 0 0 3px var(--inverted-bg-color);
+}
