@@ -18,9 +18,9 @@ export const Sidebar: FC<SidebarType> = ({ className }) => {
   }
 
   return (
-      <div className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}>
-          <Button onClick={toggleCollapsed}>{collapsed ? t('развернуть') : t('скрыть')}</Button>
-          <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: collapsed }, [])}>
+      <div className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])} data-testid="sidebar">
+          <Button onClick={toggleCollapsed} data-testid="toggle-collapse">{collapsed ? t('развернуть') : t('скрыть')}</Button>
+          <div className={classNames(styles.switchers, { [styles.switchers_collapsed]: collapsed }, [])} data-testid="switchers">
               <ThemeSwitcher />
               <LanguageSwitcher />
           </div>
