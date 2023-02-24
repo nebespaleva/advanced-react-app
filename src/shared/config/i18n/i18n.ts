@@ -12,7 +12,10 @@ i18next
     debug: true,
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json'
-    }
+    },
+    react: {
+      useSuspense: false
+    },
   })
   .catch((err) => { console.log(err) })
 
