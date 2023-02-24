@@ -1,5 +1,5 @@
-import {RouterDecorator, StylesDecorator, ThemeDecorator} from "../../src/shared/config/storybook";
-import { Theme } from "../../src/app/providers/ThemeProvider";
+import {RouterDecorator, StylesDecorator, ThemeDecorator} from "shared/config/storybook";
+import { Theme } from "app/providers/ThemeProvider";
 import i18n from "./i18nStories"
 
 export const parameters = {
