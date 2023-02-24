@@ -21,7 +21,7 @@ export const PageError: FC<PageErrorType> = ({ className, error }) => {
       <div className={classNames(styles.pageError, {}, [className])}>
           <span className={styles.title}>{t('Произошла ошибка ')}:(</span>
           <span className={styles.description}>{t('Наименование ошибки:')} {error.name}</span>
-          <span className={styles.description}>{t('Текст ошибки:')} {error.name}</span>
+          <span className={styles.description}>{t('Текст ошибки:')} {error.message}</span>
           <Button onClick={handleReload} theme={ButtonTheme.ERROR}>{t('Перезагрузить')}</Button>
       </div>
   )

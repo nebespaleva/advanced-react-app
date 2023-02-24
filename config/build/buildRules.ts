@@ -1,6 +1,7 @@
 import type webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { type Options } from './types/config'
+import { buildCssLoader } from "../loaders/buildCssLoader";
+import { buildSvgLoader } from "../loaders/buildSvgLoader";
 
 export function buildRules (options: Options): webpack.RuleSetRule[] {
   const fileRules = {
@@ -12,33 +13,9 @@ export function buildRules (options: Options): webpack.RuleSetRule[] {
     ]
   }
 
-  const svgRules = {
-    test: /\.svg$/,
-    use: [
-      {
-        loader: '@svgr/webpack'
-      }
-    ]
-  }
+  const svgRules = buildSvgLoader();
 
-  const scssRules = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => resPath.includes('.module.'),
-            localIdentName: options.isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:5]'
-          }
-        }
-      },
-      'sass-loader'
-    ]
-  }
+  const scssRules = buildCssLoader(options.isDev)
 
   const typescriptRule = {
     test: /\.tsx?$/,
