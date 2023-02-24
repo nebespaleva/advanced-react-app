@@ -7,13 +7,15 @@
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:sh": "npx loki test",
+    "test:sh-aprove": "npx loki approve",
     "lint:es": "eslint \"**/*.{ts, tsx}\"",
     "lint:es:fix": "eslint \"**/*.{ts, tsx}\" --fix",
     "lint:styles": "stylelint \"**/*.scss\"",
     "lint:styles:fix": "stylelint \"**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook: build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
