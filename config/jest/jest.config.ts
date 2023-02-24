@@ -41,7 +41,8 @@ export default {
   rootDir: '../../',
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx')
+    '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
+    "resolver": undefined
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
