@@ -39,7 +39,7 @@ export default {
   rootDir: '../../',
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': '<rootDir>/config/jest/JestEmptyComponent.tsx'
+    '\\.svg': '../../config/jest/JestEmptyComponent.tsx'
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
