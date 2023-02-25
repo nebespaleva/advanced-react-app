@@ -1,0 +1,1 @@
+export { RenderComponent } from './RenderComponent/RenderComponent'

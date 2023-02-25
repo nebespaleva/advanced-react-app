@@ -16,10 +16,60 @@
     justify-content: center;
     width: 100%;
     position: absolute;
-    bottom: var(--l);
-    transition: transform 0.3s ease-out;
+    bottom: var(--s);
 }
 
 .switchers_collapsed {
-    transform: translateX(-150px);
+    flex-direction: column;
+    row-gap: var(--s);
+
+    button {
+        margin: 0;
+    }
+}
+
+.collapseButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--xs) var(--xxs) var(--xs) 0;
+    position: absolute;
+    bottom: var(--s);
+    left: 100%;
+    background-color: var(--inverted-bg-color);
+    border-radius: 0 var(--s) var(--s) 0;
+}
+
+.icon {
+    fill: var(--inverted-color-secondary);
+    transition: transform 0.3s ease-out;
+}
+
+.iconCollapsed {
+    transform: rotateY(180deg);
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--s);
+    padding-left: var(--l);
+    row-gap: var(--s);
+}
+
+.link {
+    display: flex;
+    column-gap: var(--s);
+
+    span {
+        opacity: 1;
+        transition: all 0.2s ease-out;
+    }
+}
+
+.linkCollapsed {
+    span {
+        opacity: 0;
+        width: 0;
+    }
 }
