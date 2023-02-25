@@ -39,7 +39,7 @@ export default {
   rootDir: '../../',
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': './svg.js'
+    '\\.svg$': './svg.js'
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
