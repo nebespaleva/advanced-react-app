@@ -38,9 +38,15 @@ export const Modal: FC<ModalType> = ({ className, onClose, isOpen, children, con
 
   return (
       <Portal>
-          <div className={classNames(styles.modal, modalMods, [className])} onClick={onClose}>
+          <div
+              className={classNames(styles.modal, modalMods, [className])}
+              onClick={onClose}
+          >
               <div className={classNames(styles.overlay, {}, [])}>
-                  <div className={classNames(styles.content, contentMods, [contentClassName])} onClick={onContentClick}>
+                  <div
+                      className={classNames(styles.content, contentMods, [contentClassName])}
+                      onClick={onContentClick}
+                  >
                       {children}
                   </div>
               </div>
