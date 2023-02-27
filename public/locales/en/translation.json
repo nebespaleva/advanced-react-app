@@ -12,5 +12,8 @@
   "Текст ошибки:": "Error description:",
   "Перезагрузить": "Reload",
   "Выбросить ошибку": "Throw error",
-  "Войти": "Log in"
+  "Войти": "Log in",
+  "Величина": "Value",
+  "Увеличить": "Increase",
+  "Уменьшить": "Decrease"
 }
