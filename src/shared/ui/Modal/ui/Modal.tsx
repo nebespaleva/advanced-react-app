@@ -2,6 +2,7 @@ import { type FC, type MouseEvent, type ReactNode, useCallback, useEffect } from
 import { classNames } from 'shared/lib'
 import styles from './Modal.module.scss'
 import { Portal } from 'shared/ui/Portal/Portal'
+import { useTheme } from 'app/providers/ThemeProvider'
 
 interface ModalType {
   children: ReactNode
@@ -18,6 +19,8 @@ export const Modal: FC<ModalType> = ({ className, onClose, isOpen, children, con
   const contentMods = {
     [styles.contentOpened]: isOpen
   }
+
+  const { theme } = useTheme()
 
   const onKeyDown = useCallback((event: KeyboardEvent): void => {
     if (event.key === 'Escape') {
@@ -39,7 +42,7 @@ export const Modal: FC<ModalType> = ({ className, onClose, isOpen, children, con
   return (
       <Portal>
           <div
-              className={classNames(styles.modal, modalMods, [className])}
+              className={classNames(styles.modal, modalMods, [className, theme])}
               onClick={onClose}
           >
               <div className={classNames(styles.overlay, {}, [])}>
