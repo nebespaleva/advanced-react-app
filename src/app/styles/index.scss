@@ -15,6 +15,14 @@
     transition: 0.3s ease-out all;
 }
 
+.portal {
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--color-secondary);
+    height: 0;
+    transition: 0.3s ease-out all;
+}
+
 .page-content {
     display: flex;
 }

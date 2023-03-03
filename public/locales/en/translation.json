@@ -15,5 +15,7 @@
   "Войти": "Log in",
   "Величина": "Value",
   "Увеличить": "Increase",
-  "Уменьшить": "Decrease"
+  "Уменьшить": "Decrease",
+  "Имя": "Username",
+  "Пароль": "Password"
 }

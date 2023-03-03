@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+}
+
+.placeholder {
+    margin-right: var(--xxs);
+}
+
+.container {
+    position: relative;
+}
+
+.input {
+    font: var(--font-m);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 var(--color-secondary);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.caret {
+    width: 9px;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-secondary);
+    animation: caret-animation 0.7s forwards infinite;
+}
+
+@keyframes caret-animation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.01;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

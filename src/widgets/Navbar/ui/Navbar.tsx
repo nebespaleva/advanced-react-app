@@ -2,7 +2,8 @@ import { type FC, useState } from 'react'
 import { classNames } from 'shared/lib'
 import { useTranslation } from 'react-i18next'
 import styles from './Navbar.module.scss'
-import { Button, ButtonTheme, Modal } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui'
+import { AuthModal } from 'features/AuthByUsername'
 
 interface NavbarType {
   className?: string
@@ -19,9 +20,7 @@ export const Navbar: FC<NavbarType> = ({ className }) => {
   return (
       <div className={classNames(styles.navbar, {}, [className])}>
           <Button theme={ButtonTheme.CLEAR} onClick={toggleOpen}>{t('Войти')}</Button>
-          <Modal isOpen={open} onClose={toggleOpen}>
-              {t('На главную')}
-          </Modal>
+          <AuthModal isOpen={open} onClose={toggleOpen} />
       </div>
   )
 }

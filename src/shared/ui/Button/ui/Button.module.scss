@@ -2,6 +2,14 @@
     cursor: pointer;
 }
 
+.primary {
+    padding: var(--xs) var(--l);
+    font: var(--font-m);
+    background-color: var(--inverted-bg-color);
+    color: var(--color-secondary);
+    border-radius: var(--s);
+}
+
 .clear {
     border: none;
     outline: none;

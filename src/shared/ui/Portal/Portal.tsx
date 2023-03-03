@@ -9,12 +9,15 @@ interface PortalType {
   container?: Element
 }
 
-export const Portal: FC<PortalType> = ({ children, container = document.body }): ReactPortal => {
+export const Portal: FC<PortalType> = ({
+  children,
+  container = document.body
+}): ReactPortal => {
   const { theme } = useTheme()
 
   return (
     createPortal(<ThemeProvider>
-        <div className={classNames('app', {}, [theme])}>
+        <div className={classNames('portal', {}, [theme])}>
             {children}
         </div>
     </ThemeProvider>, container)
