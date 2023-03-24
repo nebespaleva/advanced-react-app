@@ -1,4 +1,4 @@
-import {RouterDecorator, StylesDecorator, ThemeDecorator} from "shared/config/storybook";
+import {RouterDecorator, StoreDecorator, StylesDecorator, ThemeDecorator} from "shared/config/storybook";
 import { Theme } from "app/providers/ThemeProvider";
 import i18n from "./i18nStories"
 
@@ -22,4 +22,17 @@ export const decorators = [
     StylesDecorator,
     ThemeDecorator(Theme.LIGHT),
     RouterDecorator,
+    StoreDecorator({
+        authByUsername: {
+            username: '123',
+            password: '123',
+            isLoading: false
+        },
+        user: {
+            userAuth: undefined
+        },
+        counter: {
+            value: 2
+        }
+    })
 ]

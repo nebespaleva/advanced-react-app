@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FC, type InputHTMLAttributes, type SyntheticEvent, useState } from 'react'
+import { type ChangeEvent, type FC, type InputHTMLAttributes, memo, type SyntheticEvent, useState } from 'react'
 import { classNames } from 'shared/lib'
 import styles from './Input.module.scss'
 
@@ -11,7 +11,7 @@ type InputType = {
   autoFocus?: boolean
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
-export const Input: FC<InputType> = (
+export const Input: FC<InputType> = memo((
   {
     className,
     onChange,
@@ -62,4 +62,4 @@ export const Input: FC<InputType> = (
           </div>
       </div>
   )
-}
+})

@@ -37,6 +37,7 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/dot-notation': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     'i18next/no-literal-string': 2,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'

@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC } from 'react'
+import { type ButtonHTMLAttributes, type FC, memo } from 'react'
 import { classNames } from 'shared/lib'
 import styles from './Button.module.scss'
 
@@ -13,14 +13,19 @@ type ButtonType = {
   theme?: ButtonTheme
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button: FC<ButtonType> = (props) => {
-  const { className, children, theme = ButtonTheme.PRIMARY, ...otherProps } = props
+export const Button: FC<ButtonType> = memo((props) => {
+  const { className, children, theme = ButtonTheme.PRIMARY, disabled, ...otherProps } = props
+  const buttonMods = {
+    [styles.disabled]: disabled
+  }
+
   return (
       <button
-          className={classNames(styles.button, {}, [className, styles[theme]])}
+          className={classNames(styles.button, buttonMods, [className, styles[theme]])}
+          disabled={disabled}
           {...otherProps}
         >
           {children}
       </button>
   )
-}
+})

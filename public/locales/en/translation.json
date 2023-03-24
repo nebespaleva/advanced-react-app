@@ -13,9 +13,12 @@
   "Перезагрузить": "Reload",
   "Выбросить ошибку": "Throw error",
   "Войти": "Log in",
+  "Выйти": "Log out",
   "Величина": "Value",
   "Увеличить": "Increase",
   "Уменьшить": "Decrease",
   "Имя": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Неверный логин или пароль": "Invalid login or password"
 }
