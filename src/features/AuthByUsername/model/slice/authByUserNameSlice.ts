@@ -4,8 +4,9 @@ import { type AuthByUserNameSchema } from '../types/authByUserNameTypes'
 
 const initialState: AuthByUserNameSchema = {
   isLoading: false,
-  username: '',
-  password: ''
+  username: 'admin',
+  password: '123',
+  error: 'Something went wrong'
 }
 
 export const authByUsernameSlice = createSlice({

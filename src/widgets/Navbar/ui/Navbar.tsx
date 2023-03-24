@@ -37,7 +37,7 @@ export const Navbar: FC<NavbarType> = ({ className }) => {
   return (
       <div className={classNames(styles.navbar, {}, [className])}>
           <Button theme={ButtonTheme.CLEAR} onClick={toggleOpen}>{t('Войти')}</Button>
-          <AuthModal isOpen={open} onClose={toggleOpen} />
+          { open && <AuthModal isOpen={open} onClose={toggleOpen} /> }
       </div>
   )
 }

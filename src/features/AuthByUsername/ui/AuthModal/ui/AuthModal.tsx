@@ -1,6 +1,6 @@
 import { type FC, useEffect } from 'react'
 import { Modal } from 'shared/ui'
-import { AuthForm } from '../../AuthForm/ui/AuthForm'
+import { AuthFormAsync } from '../../AuthForm/ui/AuthForm.async'
 import { authByUsernameActions } from 'features/AuthByUsername/model/slice/authByUserNameSlice'
 import { useAppDispatch } from 'shared/lib'
 
@@ -27,7 +27,7 @@ export const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose }) => {
           onClose={onClose}
           lazy
       >
-          <AuthForm />
+          <AuthFormAsync />
       </Modal>
   )
 }

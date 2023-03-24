@@ -1,21 +1,31 @@
 import { type FC, memo, useCallback } from 'react'
-import { classNames, useAppDispatch } from 'shared/lib'
+import { classNames, useAppDispatch, UseDynamicLoadModule, type ReducerList } from 'shared/lib'
 import { Button, ButtonTheme, Input, Text, TextTheme } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import styles from './AuthForm.module.scss'
-import { getAuth } from '../../../model/selectors/getAuth'
-import { authByUsernameActions } from '../../../model/slice/authByUserNameSlice'
+import { authByUsernameActions, authByUsernameReducer } from '../../../model/slice/authByUserNameSlice'
 import { authByUsername } from '../../../model/services/authByUsername'
+import { getPasswordSelector } from '../../../model/selectors/getPasswordSelector/getPasswordSelector'
+import { getUsernameSelector } from '../../../model/selectors/getUsernameSelector/getUsernameSelector'
+import { getLoadingSelector } from '../../../model/selectors/getLoadingSelector/getLoadingSelector'
+import { getErrorSelector } from '../../../model/selectors/getErrorSelector/getErrorSelector'
 
 interface AuthFormType {
   className?: string
 }
 
-export const AuthForm: FC<AuthFormType> = memo(({ className }) => {
+const initialReducer: ReducerList = { authByUsername: authByUsernameReducer }
+
+const AuthForm: FC<AuthFormType> = memo(({ className }) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  const { password, username, isLoading, error } = useSelector(getAuth)
+  const password = useSelector(getPasswordSelector)
+  const username = useSelector(getUsernameSelector)
+  const isLoading = useSelector(getLoadingSelector)
+  const error = useSelector(getErrorSelector)
+
+  UseDynamicLoadModule({ reducers: initialReducer })
 
   const { setPassword, setUsername } = authByUsernameActions
 
@@ -59,3 +69,5 @@ export const AuthForm: FC<AuthFormType> = memo(({ className }) => {
       </div>
   )
 })
+
+export default AuthForm

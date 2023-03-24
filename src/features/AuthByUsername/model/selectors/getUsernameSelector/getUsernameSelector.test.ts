@@ -1,9 +1,9 @@
-import { getAuth } from './getAuth'
+import { getUsernameSelector } from './getUsernameSelector'
 import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StoreSchema } from 'app/providers/StoreProvider'
 
-describe('getAuth', () => {
-  test('should return getAuth state', () => {
+describe('getError', () => {
+  test('should return getErrorSelector state', () => {
     const stateData = {
       isLoading: false,
       username: 'word',
@@ -15,6 +15,6 @@ describe('getAuth', () => {
       authByUsername: stateData
     }
 
-    expect(getAuth(state as StoreSchema)).toEqual(stateData)
+    expect(getUsernameSelector(state as StoreSchema)).toEqual(stateData.username)
   })
 })
