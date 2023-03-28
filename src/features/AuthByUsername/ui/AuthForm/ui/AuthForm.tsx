@@ -13,11 +13,12 @@ import { getErrorSelector } from '../../../model/selectors/getErrorSelector/getE
 
 interface AuthFormType {
   className?: string
+  onSuccess?: () => void
 }
 
 const initialReducer: ReducerList = { authByUsername: authByUsernameReducer }
 
-const AuthForm: FC<AuthFormType> = memo(({ className }) => {
+const AuthForm: FC<AuthFormType> = memo(({ className, onSuccess }) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const password = useSelector(getPasswordSelector)
@@ -38,11 +39,15 @@ const AuthForm: FC<AuthFormType> = memo(({ className }) => {
   }, [setPassword, dispatch])
 
   const onClickLogin = useCallback(async (): Promise<void> => {
-    await dispatch(authByUsername({
+    const result = await dispatch(authByUsername({
       username,
       password
     }))
-  }, [dispatch, username, password])
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, username, password, onSuccess])
 
   return (
       <div className={classNames(styles.authForm, {}, [className])}>

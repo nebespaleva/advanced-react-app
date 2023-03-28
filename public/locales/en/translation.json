@@ -20,5 +20,6 @@
   "Имя": "Username",
   "Пароль": "Password",
   "Форма авторизации": "Authorization form",
-  "Неверный логин или пароль": "Invalid login or password"
+  "Неверный логин или пароль": "Invalid login or password",
+  "Профайл": "Profile"
 }

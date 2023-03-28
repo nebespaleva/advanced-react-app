@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 import { classNames } from 'shared/lib'
 import styles from './AppLink.module.scss'
 import { Link, type LinkProps } from 'react-router-dom'
@@ -13,11 +13,11 @@ type AppLinkType = {
   theme?: AppLinkTheme
 } & LinkProps
 
-export const AppLink: FC<AppLinkType> = (props) => {
+export const AppLink: FC<AppLinkType> = memo((props) => {
   const { className, to, theme = AppLinkTheme.PRIMARY, children } = props
   return (
       <Link to={to} className={classNames(styles.appLink, {}, [className, styles[theme]])}>
           { children }
       </Link>
   )
-}
+})

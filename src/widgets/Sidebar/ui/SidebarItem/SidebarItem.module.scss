@@ -1,0 +1,16 @@
+.link {
+    display: flex;
+    column-gap: var(--s);
+
+    span {
+        opacity: 1;
+        transition: all 0.2s ease-out;
+    }
+}
+
+.linkCollapsed {
+    span {
+        opacity: 0;
+        width: 0;
+    } 
+}

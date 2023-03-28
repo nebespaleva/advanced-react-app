@@ -1,6 +1,7 @@
 import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
 import { AuthByUserNameSchema } from "features/AuthByUsername";
+import {ProfileSchema} from 'entities/Profile';
 import {
   AnyAction,
   CombinedState,
@@ -15,6 +16,7 @@ export interface StoreSchema {
 
   // Async reducers
   authByUsername?: AuthByUserNameSchema;
+  profile?: ProfileSchema
 }
 
 export type StoreSchemaKey = keyof StoreSchema;

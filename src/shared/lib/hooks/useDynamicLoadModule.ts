@@ -22,6 +22,7 @@ export const UseDynamicLoadModule = ({ reducers, removeAfterUnmount = true }: Us
   useEffect(() => {
     Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
       store.reducerManager?.add(name, reducer)
+      dispatch({ type: '@@CREATE store' })
     })
 
     return () => {

@@ -48,6 +48,7 @@ export const Input: FC<InputType> = memo((
           </div>
           <div className={styles.container}>
               <input
+                  data-testId='custom-input'
                   autoFocus={autoFocus}
                   className={styles.input}
                   type={type}

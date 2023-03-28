@@ -1,20 +1,17 @@
 import { type FC, useState } from 'react'
 import { classNames } from 'shared/lib'
+import { sidebarItems } from '../model/SidebarItemModel/model'
 import styles from './Sidebar.module.scss'
 import { LanguageSwitcher, ThemeSwitcher } from 'widgets/Switchers'
-import { AppLink, AppLinkTheme, Button, ButtonTheme } from 'shared/ui'
-import { useTranslation } from 'react-i18next'
-import { RoutePaths } from 'shared/config/router/appRouterConfig'
+import { Button, ButtonTheme } from 'shared/ui'
 import DoubleArrow from 'shared/assets/icons/double-left.svg'
-import Main from 'shared/assets/icons/home.svg'
-import About from 'shared/assets/icons/about.svg'
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem'
 
 interface SidebarType {
   className?: string
 }
 
 export const Sidebar: FC<SidebarType> = ({ className }) => {
-  const { t } = useTranslation()
   const [collapsed, setCollapsed] = useState(false)
 
   const toggleCollapsed = (): void => {
@@ -26,20 +23,15 @@ export const Sidebar: FC<SidebarType> = ({ className }) => {
           className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}
           data-testid="sidebar">
           <div className={styles.linksContainer}>
-              <AppLink
-                  className={classNames(styles.link, { [styles.linkCollapsed]: collapsed }, [])}
-                  to={RoutePaths.main}
-                  theme={AppLinkTheme.SECONDARY}>
-                  <Main className={styles.icon} />
-                  <span>{t('Главная')}</span>
-              </AppLink>
-              <AppLink
-                  className={classNames(styles.link, { [styles.linkCollapsed]: collapsed }, [])}
-                  to={RoutePaths.about}
-                  theme={AppLinkTheme.SECONDARY}>
-                  < About className={styles.icon} />
-                  <span>{t('О нас')}</span>
-              </AppLink>
+              {sidebarItems.map((item) => (
+                  <SidebarItem
+                      collapsed={collapsed}
+                      route={item.route}
+                      Icon={item.Icon}
+                      text={item.text}
+                      key={item.route}
+                  />
+              ))}
           </div>
           <Button
               onClick={toggleCollapsed}
