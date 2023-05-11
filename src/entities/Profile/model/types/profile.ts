@@ -1,11 +1,13 @@
 import { type CountriesEnum, type CurrencyEnum } from 'shared/constants'
 
 export interface Profile {
-  name: string
+  firstName: string
+  lastName: string
   country: CountriesEnum
   city: string
   currency: CurrencyEnum
   age: number
+  position: string
 }
 
 export interface ProfileSchema {

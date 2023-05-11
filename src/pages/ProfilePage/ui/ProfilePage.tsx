@@ -1,18 +1,35 @@
-import { useTranslation } from 'react-i18next'
-import { type FC } from 'react'
-import { type ReducerList, UseDynamicLoadModule } from 'shared/lib'
-import { profileReducer } from 'entities/Profile'
+import { type FC, useEffect } from 'react'
+import { type ReducerList, useAppDispatch, UseDynamicLoadModule } from 'shared/lib'
+import {
+  getErrorSelector,
+  getLoadingSelector, getProfileData,
+  getProfileDataSelector,
+  ProfileCard,
+  profileReducer
+} from 'entities/Profile'
+import { useSelector } from 'react-redux'
 
 const initialReducer: ReducerList = { profile: profileReducer }
 
 const ProfilePage: FC = () => {
-  const { t } = useTranslation('profile')
+  const dispatch = useAppDispatch()
+  const data = useSelector(getProfileDataSelector)
+  const isLoading = useSelector(getLoadingSelector)
+  const error = useSelector(getErrorSelector)
+
+  useEffect(() => {
+    void dispatch(getProfileData())
+  }, [dispatch])
 
   UseDynamicLoadModule({ reducers: initialReducer })
 
   return (
       <div>
-          {t('Профайл')}
+          <ProfileCard
+              error={error}
+              isLoading={isLoading}
+              data={data}
+          />
       </div>
   )
 }

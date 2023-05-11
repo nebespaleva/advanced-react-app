@@ -26,10 +26,12 @@
     }
   ],
   "profile": {
-    "name": "typicode",
+    "firstName": "Alex",
+    "lastName": "Arsenev",
     "country": "Russia",
     "city": "Kerch",
     "currency": "RUB",
-    "age": 30
+    "age": 30,
+    "position": "Frontend Developer"
   }
 }

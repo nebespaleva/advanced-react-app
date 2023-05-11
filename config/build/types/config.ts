@@ -11,10 +11,12 @@ export interface Options {
   mode: WebpackMode
   paths: WebpackPaths
   isDev: boolean
-  port: number
+  port: number,
+  apiUrl: string,
 }
 
 export interface EnvBuild {
   mode: WebpackMode
-  port: number
+  port: number,
+  apiUrl: string,
 }

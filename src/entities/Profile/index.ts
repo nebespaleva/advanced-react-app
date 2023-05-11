@@ -1,2 +1,7 @@
 export { type Profile, type ProfileSchema } from './model/types/profile'
 export { profileReducer, profileActions } from './model/slice/ProfileSlice'
+export { getProfileData } from './model/services/getProfileData/getProfileData'
+export { getLoadingSelector } from './model/selectors/getLoadingSelector/getLoadingSelector'
+export { getErrorSelector } from './model/selectors/getErrorSelector/getErrorSelector'
+export { getProfileDataSelector } from './model/selectors/getProfileDataSelector/getProfileDataSelector'
+export { ProfileCard } from './ui/ProfileCard/ProfileCard'
